@@ -1,0 +1,42 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "class_name": "ZPReactNativeDefaultProvider",
+    "modules": [
+      "ZappReactNativeAdapter"
+    ]
+  },
+  "dependency_repository_url": [
+
+  ],
+  "platform": "ios",
+  "author_name": "Liviu Romascanu",
+  "author_email": "l.romasca@applicaster.com",
+  "manifest_version": "0.1.0",
+  "name": "Zapp React Native Starter Plugin",
+  "description": "React native starter plugin used as a starting codebase for new RN development",
+  "type": "general",
+  "screen": true,
+  "identifier": "ZappRNStarter",
+  "ui_builder_support": true,
+  "whitelisted_account_ids": [
+    "57d7bee06466610018000000"
+  ],
+  "min_zapp_sdk": "12.0.0",
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "react_native": true,
+  "react_bundle_url": "https://assets-production.applicaster.com/applicaster-employees/us_team/ZappRNStarter/ios/index.ios.bundle.js",
+  "extra_dependencies": [
+
+  ],
+  "npm_dependencies": [
+
+  ],
+  "project_dependencies": [
+
+  ],
+  "custom_configuration_fields": [
+
+  ]
+}

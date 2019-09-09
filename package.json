@@ -1,0 +1,27 @@
+{
+  "name": "zapp-reactnative-starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "build": "yarn build:ios && yarn run build:android",
+        "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output build/ios/index.ios.bundle.js",
+        "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output build/android/index.android.bundle.js --assets-dest build/assets/"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
