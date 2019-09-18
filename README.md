@@ -34,14 +34,27 @@ In order to build run either `npm run-script build` or `yarn build`.
 For the sake of simplicity and quick testing - Zapp already contains an app with this plugin built in.
 With the following steps you could run your local version of the plugin within a full fledged Zapp App enviornment.
 
-1. If you have access to Zapp - please use the following app family: https://zapp.applicaster.com/app_families/1554
-2. If you don't have access to zapp - Feel free to download the compiled version: https://rink.hockeyapp.net/apps/e96cb5f66bb34ad99e0d10bdf2637ce0
-3. Install the app on the device and run it
+### Testing on simulator
+
+1. Download the latest dev project for zip iOS from: https://zapp.applicaster.com/app_families/1554
+2. Open the workspace file from the unzipped directory
+3. Choose the simulator as the target. Run the app and stop it once it launched.
 4. Go to device settings app -> Zapp React Native Starter App
 5. Under React Native Bundle -> Turn off `Allow Caching`
-6. On simulator -> Change server type to `Local`
-7. On device -> Change server type to `Custom` and in `Custom` field change the IP to your computer's IP running the RN project.
-8. Run the app
-9. Click on the side menu on the top left (White button - might be hard to see)
-10. Select `RN Starter`
-11. Shake the phone if on physical device / click `Cmd + d` on the simulator to pop up the debug menu
+6. Change React Native server type to `Local`
+7. Run the app
+8. Click on the side menu on the top left (White button - might be hard to see)
+9. Select `RN Starter`
+10. Click `Cmd + d` on the simulator to pop up the debug menu
+
+### Testing on device
+
+1. If you have access to Zapp - please use the following app family: https://zapp.applicaster.com/app_families/1554 and download the latest iOS build or alternatively download the compiled version: https://rink.hockeyapp.net/apps/e96cb5f66bb34ad99e0d10bdf2637ce0
+2. After the app is installed on the device - launch it and then kill it from background.
+3. Go to device settings app -> Zapp React Native Starter App
+4. Under React Native Bundle -> Turn off `Allow Caching`
+5. On device -> Change server type to `Custom` and in `Custom` field change the IP to your computer's IP running the RN project.
+6. Run the app
+7. Click on the side menu on the top left (White button - might be hard to see)
+8. Select `RN Starter`
+9. Shake the phone if on physical device to pop up the debug menu
