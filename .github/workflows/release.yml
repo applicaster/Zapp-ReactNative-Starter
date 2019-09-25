@@ -1,0 +1,46 @@
+on:
+  release:
+    types: [published]
+    tags: v*
+    
+name: Release Plugin Version
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: macOS-10.14
+    steps:
+    - uses: actions/checkout@master
+
+    -- name: Install
+      uses: actions/npm@master
+      with:
+        args: install
+    
+    - name: Test
+      uses: actions/npm@master
+      with:
+        args: test
+    
+    - name: Build Bundle
+      uses: actions/npm@master
+      with:
+        args: build
+
+    - name: Publish to NPM
+      uses: actions/npm@master
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      with:
+        args: publish --access public
+
+    - name: Publish to Zapp
+      env:
+        ZAPP_TOKEN: ${{ secrets.ZAPP_TOKEN }}
+        IOS_MANIFEST: ${{ HOME/plugin_manifest_ios.json }}
+        ANDROID_MANIFEST: ${{ HOME/plugin_manifest_android.json }}
+      run:
+        brew tap applicaster/tap
+        brew install zappifest
+        zappifest publish --manifest ${IOS_MANIFEST} --access-token ${ZAPP_TOKEN}
+        zappifest publish --manifest ${ANDROID_MANIFEST} --access-token ${ZAPP_TOKEN}
