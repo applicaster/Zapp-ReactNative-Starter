@@ -11,11 +11,10 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Build
-      uses: actions/npm@master
-      with:
-        args: install
+      run:
+        npx install
     
     - name: Test
-      uses: actions/npm@master
-      with:
-        args: test
+      run:
+        npx test
+        
