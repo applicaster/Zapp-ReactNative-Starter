@@ -10,6 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
+    - name: Install Node
+      run:
+        brew install node
+        
     - name: Build
       run:
         npx install
@@ -17,4 +21,3 @@ jobs:
     - name: Test
       run:
         npx test
-        
