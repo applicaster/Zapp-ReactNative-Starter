@@ -1,23 +1,21 @@
 on: pull_request
 
-name: Build and Test
+name: Test
 
 jobs:
   build:
-    name: Build and Test
-    runs-on: macOS-10.14
+    name: Test
+    runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@master
+ 
+    - name: NPM Install
+      uses: actions/npm@master
+      with:
+        args: install
     
-    - name: Install Node
-      run:
-        brew install node
-        
-    - name: Build
-      run:
-        npx install
-    
-    - name: Test
-      run:
-        npx test
+    - name: NPM Test
+      uses: actions/npm@master
+      with:
+        args: test
