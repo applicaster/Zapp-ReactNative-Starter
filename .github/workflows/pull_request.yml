@@ -21,8 +21,8 @@ jobs:
         args: test
 
     - name: install ruby
-      uses: mscoutermarsh/ruby-action-recipe@master
       run:
-        apt install linuxbrew-wrapper
+        sudo apt install ruby-full
+        sudo apt install linuxbrew-wrapper
         brew tap applicaster/tap
         brew install zappifest
