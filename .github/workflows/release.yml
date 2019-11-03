@@ -8,7 +8,8 @@ name: Release Plugin Version
 jobs:
   build:
     name: Deploy
-    runs-on: macOS-10.14
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@master
 
@@ -33,14 +34,3 @@ jobs:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       with:
         args: publish --access public
-
-    - name: Publish to Zapp
-      env:
-        ZAPP_TOKEN: ${{ secrets.ZAPP_TOKEN }}
-        IOS_MANIFEST: ${{ HOME/plugin_manifest_ios.json }}
-        ANDROID_MANIFEST: ${{ HOME/plugin_manifest_android.json }}
-      run:
-        brew tap applicaster/tap
-        brew install zappifest
-        zappifest publish --manifest ${IOS_MANIFEST} --access-token ${ZAPP_TOKEN}
-        zappifest publish --manifest ${ANDROID_MANIFEST} --access-token ${ZAPP_TOKEN}

@@ -19,19 +19,3 @@ jobs:
       uses: actions/npm@master
       with:
         args: test
-
-    - name: install ruby
-      run:
-        sudo apt install ruby-full
-
-    - name: install brew
-      run:
-        sudo apt install linuxbrew-wrapper
-
-    - name: install applicaster/tap
-      run:
-        brew tap applicaster/tap
-        
-    - name: install zappifest
-      run:
-        brew install zappifest
