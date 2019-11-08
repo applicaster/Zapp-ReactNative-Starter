@@ -10,12 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
  
-    - name: NPM Install
-      uses: actions/npm@master
+    - uses: actions/setup-node@v1
       with:
-        args: install
-    
-    - name: NPM Test
-      uses: actions/npm@master
-      with:
-        args: test
+        node-version: '8.x'
+    - run: npm install
+    - run: npm test
